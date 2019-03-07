@@ -8,7 +8,7 @@
 
 ---
 
-#### Categories
+### Categories
 
 - Algorithm
 
