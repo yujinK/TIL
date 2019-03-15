@@ -2,7 +2,7 @@ package codility;
 
 import java.util.Arrays;
 
-public class Lession2_2 {
+public class Lesson2_2 {
 
 	public static void main(String[] args) {
 		int[] A = {9, 3, 9, 3, 9, 7, 9};
