@@ -1,6 +1,6 @@
 package codility;
 
-public class Lession3_2 {
+public class Lesson3_2 {
 
 	public static void main(String[] args) {
 		int[] A = {1, 2, 3, 5};
