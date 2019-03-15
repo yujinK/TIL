@@ -1,6 +1,6 @@
 package codility;
 
-public class Lession3_1 {
+public class Lesson3_1 {
 
 	public static void main(String[] args) {
 		System.out.println(frogJump(5, 105, 3));
