@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Lession1 {
+public class Lesson1 {
 
 	public static void main(String[] args) {
 		System.out.println(binaryGap(1041));
