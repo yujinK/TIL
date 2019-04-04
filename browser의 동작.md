@@ -30,3 +30,5 @@
 4) 조합된 결과는 화면에 어떻게 배치할지 크기와 위치 정보를 담고 있음
 
 5) Render Tree 정보를 통해서 화면의 어떤 부분에 어떻게 색칠 할 지 Painging과정을 거침
+
+출처 : https://www.edwith.org/boostcourse-web
