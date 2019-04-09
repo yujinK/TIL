@@ -99,5 +99,101 @@
    5. `Infix notation(중위 기호)`는 멤버 함수나 메서드로도 동작
    6. 포함 클래스가 첫 번째 파라미터가 된다
 
+   
+
+   **Operator Functions**
+
+   ```kotlin
+   operator fun Int.times(str: String) = str.repeat(this)			//1
+   println(2 * "Bye ")												//2
+   
+   operator fun String.get(range: IntRange) = substring(range)		//3
+   val str = "Always forgive your enemies; nothing annoys them so much."
+   println(str[0..14])												//4
+   ```
+
+   1. 연산자를 사용한 중위함수
+   2. times() 연산자 기호인 *를 사용하여 함수 호출을 한다
+   3. strings의 범위 접근을 허용한다
+   4. get() 연산자는 [] 괄호를 사용한다
+
+   
+
+   **Functions with vararg Parameters**
+
+   콤마(,)로 구분된 여러 개의 arguments(인수)를 사용할 수 있다.
+
+   ```kotlin
+   fun printAll(vararg messages: String) {								//1
+       for (m in message) println(m)
+   }
+   printAll("Hello", "Hallo", "Salut", "Hola", "안녕하세요")			//2
+   
+   fun printAllWithPrefix(vararg messages: String, prefix: String) {	//3
+       for (m in message) println(prefix + m)
+   }
+   printAllWithPrefix(
+   	"Hello", "Hallo", "Salut", "Hola", "안녕하세요",
+       prefix = "Greeting: "											//4
+   )
+   
+   fun log(vararg entries: String) {
+       printAll(*entries)												//5
+   }
+   ```
+
+   1. 파라미터로 들어온 vararg를 순회한다
+   2. 어떤 수의 arguments(인수)를 가지더라도 호출 가능하다
+   3. 파라미터에 이름 붙인 덕분에 vararg 이후에 같은 타입을 가진 다른 파라미터를 추가 할 수 있다. Java에서는 값을 넘길 방법이 없기 때문에 허용하지 않는 문법.
+   4. 이름 붙인 파라미터를 사용해서 vararg와는 분리된  prefix 값을 설정할 수 있다
+   5. 런타임 때, vararg는 array이다. vararg 파라미터는 넘겨주기 위해, 분할 연산자 *를 사용한다. entries(Array<String>) 대신에 *entries(vararg의 String) 사용.
+
+   
+
+   **Variables**
+
+   코틀린은 엄청난 타입 추론을 가지고 있다. 변수의 타입을 정확하게 정의하지 않는 동안 컴파일러가 정의를 추추론한다. 코틀린은 타입 정의를 추천하지만 강요하지는 않는다.
+
+   ```kotlin
+   var a: String = "initial"	//1
+   println(a)
+   val b: Int = 1				//2
+   val c = 3					//3
+   ```
+
+   1. 변수 a를 선언하고 초기화했다
+   2. 상수 b를 선언하고 초기화했다
+   3. 상수 c를 선언하고 타입 지정없이 초기화했다. 컴파일러는 타입을 Int라고 추론했다.
+
+   ```kotlin
+   var e: Int	//1
+   println(e)	//2
+   ```
+
+   1. 초기화없이 변수 e를 선언했다
+   2. 변수 e를 사용하면 컴파일러 에러가 발생한다. `Variable 'e' must be initialized.`
+
+   ```kotlin
+   val d: Int	//1
+   
+   if (someCondition()) {
+       d = 1	//2
+   } else {
+       d = 2	//2
+   }
+   
+   println(d)	//3
+   ```
+
+   초기화 할 변수를 맘대로 선택 할 수 있다. 하지만, 반드시 첫 번째로 읽기 전에 초기화를 해야 한다.
+
+   1. 초기화 없이 변수 d를 선언했다
+   2. 조건에 따라 다른 값으로 변수를 초기화 한다
+   3. 이미 초기화됐기 때문에 변수 d를 읽을 수 있다
+
+   
+
+   
+
 
 
