@@ -193,7 +193,60 @@
 
    
 
+   **Null Safety**
+
+   `NullPointerException`의 세계를 제거하려는 노력으로(ㅋㅋㅋ) 코틀린의 변수 타입에는 null을 허용하지 않는다. 만약 null이 될 수 있는 변수라면 타입 끝에 ?를 붙여 null일수도 있다고 선언한다.
+
+   ```kotlin
+   var neverNull: String = "This can't be null"
    
+   neverNull = null
+   
+   var nullable: String? = "You can keep a null here"
+   
+   nullable = null
+   
+   var inferredNonNull = "The compiler assumes non-null"
+   
+   inferredNonNull = null
+   
+   fun strLength(notNull: String): Int {
+       return notNull.length
+   }
+   
+   strLength(neverNull)
+   strLength(nullable)
+   ```
+
+   1. non-null String 변수 선언
+   2. non-nullable 변수에 null을 선언하려 할 때, compilation error 발생
+   3. nullable String 변수 선언
+   4. nullable 변수에 null 정의 가능
+   5. 타입을 추론할 때, 컴파일러는 초기화 시키기 위해 non-null로 추론한다
+   6. 추론된 타입의 변수에 null을 정의하려 하면 compilation error 발생
+   7. non-null String 파라미터를 가진 함수 선언
+   8. non-nullale arguments(인수)로 함수 호출 가능
+   9. String?(nullable) arguments(인수)로 함수 호출하면 compilation error 발생
+
+   
+
+   **Working with Nulls**
+
+   때때로 코틀린 프로그램이 null값으로 작업해야 할 필요가 있다. 예를 들면 외부의 자바 코드와 작업하거나 완전히 비어있는 상태를 대신해야 할 때. 코틀린은 이런 상황을 다루는 null tracking을 제공한다.
+
+   ```kotlin
+   fun describeString(maybeString: String?): String {			//1
+       if (maybeString != null && maybeString.length > 0) {	//2
+           return "String of length ${maybeString.length}"
+       } else {
+           return "Empty or null string"						//3
+       }
+   }
+   ```
+
+   1. nullable string을 가져와서 그것을 설명하는 함수
+   2. 만약 string이 null이 아니고 비어있지 않으면, 그것의 길이 정보를 return
+   3. 그렇지 않다면, string은 비어있거나 null
 
 
 
