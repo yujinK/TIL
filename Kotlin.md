@@ -248,5 +248,31 @@
    2. 만약 string이 null이 아니고 비어있지 않으면, 그것의 길이 정보를 return
    3. 그렇지 않다면, string은 비어있거나 null
 
+   
 
+   **Classes**
+
+   클래스 선언은 클래스 이름, 클래스 헤더(파라미터 타입 명시, 주요 생성자 등), 중괄호로 둘러쌓인 클래스 바디로 이루어진다. 헤더와 바디는 선택이다. 만약 클래스에 바디가 없다면 중괄호는 생략할 수 있다.
+
+   ```kotlin
+   class Customer									//1
+   
+   class Contact(val id: Int, val email: String)	//2
+   
+   fun main() {
+       val customer = Customer()					//3
+       
+       val contact = Contact(1, "mary@gmail.com")	//4
+       
+       println(contact.id)							//5
+       contact.email = "jane@gmail.com"			//6
+   }
+   ```
+
+   1. 어떤 속성이나 사용자 정의 생성자가 없는 Customer 클래스 선언. 파라미터가 없는 기본 생성자는 코틀린에 의해 자동으로 생성된다.
+   2. 두 개의 프로퍼티 (상수 id와 변수 email)와 id, email 파라미터를 가진 생성자를 가진 클래스 선언. 
+   3. 기본 생성자를 통해 Customer 클래스의 인스턴스 생성. 코틀린에서는 `new` 키워드를 적지 않는다.
+   4. 두 개의 인수를 사용하는 Contact 클래스의 인스턴스 생성
+   5. 프로퍼티 id에 접근
+   6. 프로퍼티 email의 값 업데이트
 
