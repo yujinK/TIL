@@ -9,7 +9,7 @@ public class BOJ_9020 {
 		Scanner scan = new Scanner(System.in);
 		boolean[] prime = new boolean[10001];
 		Arrays.fill(prime, true);
-		prime[1] = false;
+		prime[0] = prime[1] = false;
 		
 		for (int i=2; i<prime.length; i++) {
 			for (int j=2; j<=Math.sqrt(i); j++) {
@@ -27,7 +27,7 @@ public class BOJ_9020 {
 			int partition1 = 0;
 			int partition2 = 0;
 			
-			for (int j=n-2; j>=n/2; j--) {
+			for (int j=n-1; j>=n/2; j--) {
 				if (prime[j] && prime[n-j]) {
 					partition1 = n - j;
 					partition2 = j;
