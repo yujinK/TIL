@@ -9,8 +9,6 @@ public class BOJ_1003 {
 		
 		int[][] fibo = new int[41][2];
 		fibo[0][0] = 1;
-		fibo[0][1] = 0;
-		fibo[1][0] = 0;
 		fibo[1][1] = 1;
 		
 		for (int i=2; i<=40; i++) {
