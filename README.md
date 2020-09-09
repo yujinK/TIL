@@ -10,8 +10,8 @@
 
 ### Categories
 
-- [Algorithm](https://github.com/yujinK/TIL/tree/master/Algorithm)
-- [Android](https://github.com/yujinK/TIL/tree/master/Android)
+:pushpin: [Algorithm](https://github.com/yujinK/TIL/tree/master/Algorithm)
+:pushpin: [Android](https://github.com/yujinK/TIL/tree/master/Android)
 - [Computer Science](https://github.com/yujinK/TIL/tree/master/Computer%20Science)
 - [Java](https://github.com/yujinK/TIL/tree/master/Java)
 - [Web](https://github.com/yujinK/TIL/tree/master/Web)
