@@ -10,8 +10,10 @@
 
 ### Categories
 
-- Algorithm
-- Android
-- Computer Science
-- Java
-- Web
+- [Algorithm](https://github.com/yujinK/TIL/tree/master/Algorithm)
+- [Android](https://github.com/yujinK/TIL/tree/master/Android)
+- [Computer Science](https://github.com/yujinK/TIL/tree/master/Computer%20Science)
+- [Java](https://github.com/yujinK/TIL/tree/master/Java)
+- [Web](https://github.com/yujinK/TIL/tree/master/Web)
+- [Kotlin](https://github.com/yujinK/TIL/tree/master/Kotlin)
+- [Node.js](https://github.com/yujinK/TIL/tree/master/Node.js)
