@@ -1,10 +1,10 @@
 # 한 눈에 끝내는 Node.js
 
-> [구름에듀 강의](https://edu.goorm.io/lecture/557/한-눈에-끝내는-node-js)를 보고 공부한 내용을 정리합니다
+> [구름에듀 강의](https://edu.goorm.io/lecture/557/한-눈에-끝내는-node-js)를 보고 공부한 내용을 정리합니다    
 
 
 
-:pencil: **Summary**  
+### Summary
 
 :pushpin: ​[01. 시작하기에 앞서](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/01.%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0%EC%97%90%20%EC%95%9E%EC%84%9C.md)  
 
