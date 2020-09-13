@@ -113,6 +113,9 @@ console.log(player instanceof Object);
 // true
 
 
+/**
+ * 스코프와 호이스팅
+ */
 var global_scope = 'global';	// 전역 스코프
 
 var local_function = function() {
@@ -141,3 +144,108 @@ function outer() {
 outer();
 
 console.log(c);		// c is not defined
+
+
+var text = 'global';
+
+function foo() {
+    console.log(text);
+}
+
+function bar() {
+    var text = 'bar';
+    foo();
+}
+
+bar();
+
+
+var text = 'global';
+
+function foo() {
+    console.log(text);
+}
+
+function bar() {
+    text = 'bar';
+    foo();
+}
+
+bar();
+
+
+
+function foo() {
+    console.log(a);	// undefined
+    var a = 100;
+    console.log(a);	// 100
+}
+
+foo();
+
+
+var num = 1;
+
+function foo() {
+    var num = 2;
+    
+    function bar() {
+        console.log(num);
+    }
+    return bar;
+}
+
+var baz = foo();
+baz();
+
+
+function f(arg) {
+	var n = function() {
+		return arg; 
+	}
+	arg++;
+	return n; 
+}
+
+var m = f(123); 
+console.log(m());
+
+
+function f() {
+    var a = [];
+    var i;
+    
+    for (i = 0; i < 3; i++) {
+        a[i] = function() {
+            return i;
+        }
+    }
+    return a;
+}
+
+var b = f();
+
+console.log(b[0]());	// 3
+console.log(b[1]());	// 3
+console.log(b[2]());	// 3
+
+
+function f() {
+    var a = [];
+    var i;
+    
+    for (i = 0; i < 3; i){
+        a[i] = (function(x) {
+            return function() {
+                return x;
+            }
+        })(i);
+    }
+    return a;
+}
+
+var b = f();
+
+console.log(b[0]());	// 0
+console.log(b[1]());	// 1
+console.log(b[2]());	// 2
