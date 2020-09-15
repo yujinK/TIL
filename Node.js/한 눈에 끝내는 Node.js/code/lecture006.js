@@ -13,3 +13,10 @@ for (var i=0; i<cpus.length; i++) {
     console.log("model: " + cpus[i].model);
     console.log("speed: " + cpus[i].speed);
 }
+
+
+var util = require('util');
+var data = util.format('%d, %s, %j', 6, 'chapter', {content: 'module'});
+
+console.log(data);
+util.log('message');
