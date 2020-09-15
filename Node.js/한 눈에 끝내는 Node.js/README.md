@@ -16,3 +16,4 @@
 
 :pushpin: [05. Node.js 설치](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/05.%20Node.js%20%EC%84%A4%EC%B9%98.md)  
 
+:pushpin: [06. 기본 모듈과 Node.js 기초](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/06.%20%EA%B8%B0%EB%B3%B8%20%EB%AA%A8%EB%93%88%EA%B3%BC%20Node.js%20%EA%B8%B0%EC%B4%88.md)  
