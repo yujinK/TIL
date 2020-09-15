@@ -64,3 +64,27 @@ fs.readFile('notexist.txt', 'utf8', function(err, data) {	// 존재하지 않는 파일 
         console.log(data);	// 읽기 성공
     }
 })
+
+
+var EventEmitter = require('events');
+
+var custom_event = new EventEmitter();
+
+custom_event.on('call', function() {
+    console.log('이벤트 콜');
+});
+
+custom_event.emit('call');
+
+
+var EventEmitter = require('events');
+
+var custom_event = new EventEmitter();
+
+custom_event.on('call', function() {
+    console.log('이벤트 콜');
+});
+
+custom_event.removeAllListeners();
+
+custom_event.emit('call');
