@@ -17,3 +17,11 @@
 :pushpin: [05. Node.js 설치](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/05.%20Node.js%20%EC%84%A4%EC%B9%98.md)  
 
 :pushpin: [06. 기본 모듈과 Node.js 기초](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/06.%20%EA%B8%B0%EB%B3%B8%20%EB%AA%A8%EB%93%88%EA%B3%BC%20Node.js%20%EA%B8%B0%EC%B4%88.md)  
+
+:pushpin: [07. 확장모듈 - npm 활용하기](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/07.%20%ED%99%95%EC%9E%A5%EB%AA%A8%EB%93%88%20-%20npm%20%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0.md)  
+
+:pushpin: [08. 주요 확장 모듈 - express](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/08.%20%EC%A3%BC%EC%9A%94%20%ED%99%95%EC%9E%A5%20%EB%AA%A8%EB%93%88%20-%20express.md)  
+
+:pushpin: [09. 주요 확장 모듈 - express Pug](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/09.%20%EC%A3%BC%EC%9A%94%20%ED%99%95%EC%9E%A5%20%EB%AA%A8%EB%93%88%20-%20express%20Pug.md)  
+
+:pushpin: [10. 주요 확장 모듈 - socket.io](https://github.com/yujinK/TIL/blob/master/Node.js/%ED%95%9C%20%EB%88%88%EC%97%90%20%EB%81%9D%EB%82%B4%EB%8A%94%20Node.js/summary/10.%20%EC%A3%BC%EC%9A%94%20%ED%99%95%EC%9E%A5%20%EB%AA%A8%EB%93%88%20-%20socket.io.md)  
