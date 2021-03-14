@@ -1,5 +1,9 @@
 # Python
 
+출처 : https://programmers.co.kr/learn/courses/2
+
+
+
 - powershell 명령
   - ls : 현재 디렉토리(폴더)의 내용 확인
   - cd : powershell에서 현재 디렉토리(폴더)를 바꾸는 명령
@@ -673,3 +677,211 @@
 - 자료형
   - type(변수명) : 자료형
   - isinstance(값, 자료형) : 자료형 검사
+
+
+
+- 클래스
+  - 함수나 변수들을 모아 놓은 집합체
+
+
+
+- 인스턴스
+  - 클래스에 의해 생성된 객체
+  - 인스턴스 각자 자신의 값을 가지고 있다
+
+
+
+- 클래스 선언
+
+  ``````python
+  class Human():
+      '''사람'''
+  ``````
+
+
+
+- 인스턴스 생성
+
+  ``````python
+  person1 = Human()
+  person2 = Human()
+  ``````
+
+  - 클래스와 인스턴스를 이용하면 데이터와 코드를 사람이 이해하기 쉽게 포장할 수 있다
+
+
+
+- 모델링(modeling)
+  - 클래스로 현실의 개념을 표현하는 것
+
+
+
+- 메소드(Method)
+
+  - 함수와 비슷
+  - 클래스에 묶여서 클래스의 인스턴스와 관계되는 일을 하는 함수
+
+  ``````python
+  class Human():
+      '''인간'''
+      def create(name, weight):
+          person = Human()
+          person.name = name
+          person.weight = weight
+          return person
+      
+      def eat(self):
+          self.weight += 0.1
+          print("{}가 먹어서 {}kg이 되었습니다".format(self.name, self.weight))
+          
+  	def walk(self):
+          self.weight -= 0.1
+          print("{}가 걸어서 {}kg이 되었습니다".format(self.name, self.weight))
+          
+  person = Human.create("철수", 60.5)
+  person.eat()
+  ``````
+
+  - self
+    - 메소드의 첫번째 인자
+    - 인스턴스에 매개변수를 전달할 때는 self 매개변수를 생략하고 전달
+
+
+
+-  초기화 함수
+
+  - `__init__` : 인스턴스를 만들 때 실행되는 함수
+
+- 문자열화 함수
+
+  - `__str__` : 인스턴스 자체를 출력할 때의 형식을 지정해주는 함수
+
+  ``````python
+  class Human():
+      '''인간'''
+      def __init__(self, name, weight):
+          '''초기화 함수'''
+          self.name = name
+          self.weight = weight
+          
+  	def __str__(self):
+          '''문자열화 함수'''
+          return "{} ( 몸무게 {}kg )".format( self.name, self.weight )
+      
+  person = Human("사람", 60.5)	# 초기화 함수 사용
+  print(person)	# 문자열화 함수 사용
+  ``````
+
+  
+
+- 상속(Inheritance)
+
+  - 부모 클래스
+    - 상속하는 클래스
+  - 자식 클래스
+    - 상속받는 클래스
+  - 자식 클래스가 부모 클래스의 내용을 가져다 쓸 수 있는 것
+
+  `````python
+  class Animal():
+      def walk(self):
+          print("걷는다")
+  
+  	def eat(self):
+          print("먹는다")
+          
+  class Human(Animal):
+      def wave(self):
+          print("손을 흔든다")
+          
+  class Dog(Animal):
+      def wag(self):
+          print("꼬리를 흔든다")
+  `````
+
+  
+
+- 오버라이드(Override)
+
+  - 같은 이름을 가진 메소드를 덮어 쓴다
+
+  ``````python
+  class Animal():
+      def greet(self):
+          print("인사한다")
+          
+  class Human(Animal):
+      def greet(self):
+          print("손을 흔든다")
+          
+  class Dog(Animal):
+      def greet(self):
+          print("꼬리를 흔든다")
+  ``````
+
+
+
+- super()
+
+  - 자식클래스에서 부모클래스의 내용을 사용하고 싶은 경우
+  - super().부모클래스내용
+
+  ``````python
+  class Animal():
+      def __init__(self, name):
+          self.name = name
+          
+  class Human(Animal):
+      def __init__(self, name, hand):
+          super().__init__(name)
+          self.hand = hand
+          
+  person = Human("사람", "오른손")
+  ``````
+
+  
+
+- 예외 정의
+
+  - 사용자가 직접 예외처리를 하면 코드의 직관성을 높일 수 있다
+  - 파일을 하나 만들어 예외를 정의 (사용 : `from 파일명 import 클래스명`)
+  - Exception 클래스를 상속받아 만든다
+
+  ``````python
+  try:
+      sign_up()
+  except BadUserName:
+      print("이름으로 사용할 수 없는 입력")
+  except PasswordNotMatched:
+      print("입력한 패스워드 불일치")
+  ``````
+
+  
+
+- List Comprehension
+  - 파이썬의 유용한 도구
+    - [ i*i for i in range(1,11) ]	# [ 계산식 for문 ]
+    - [ i*i for i in range(1,11) if i % 2 == 0 ]   # [ 계산식 for문 조건문 ]
+    - [ (x, y) for x in range(15) for y in range(15) ]   # [ 계산식 for문 for문 ]
+
+
+
+- Dictionary Comprehension
+  - 파이썬의 유용한 도구
+    - { "{}번".format(number):name for number, name in enumerate(students) }   # [ 형식 for문 ]
+    - { student:score for student, score in zip(students, scores) }  
+      - zip은 두 개 이상의 리스트나 스트링을 받아서 인덱스에 맞게 자료를 묶어주는 역할
+
+
+
+- datetime 모듈
+  - 날짜와 시간을 사용하게 해주는 라이브러리
+  - 뺄셈(-) 연산 지원 = timedelta
+    - days
+    - seconds
+
+
+
+- timedelta 클래스
+  - 시간의 연산을 가능하게 해주는 클래스
+  - datetime과 timedelta 연산 가능
