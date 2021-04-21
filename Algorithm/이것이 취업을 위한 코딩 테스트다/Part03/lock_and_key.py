@@ -1,67 +1,49 @@
 key = [[0,0,0],[1,0,0],[0,1,1]]
 lock = [[1,1,1],[1,1,0],[1,0,1]]
 
-def turn(key):
-    m = len(key)
-    new_key = [[0] * m for _ in range(m)]
+def rotate_a_matrix_by_90_degree(a):
+    n = len(a)
+    m = len(a[0])
+    result = [[0] * n for _ in range(m)]
     for i in range(m):
-        for j in range(m-1, -1, -1):
-            new_key[i][j] = key[m-1-j][i]
-
-    return new_key
-
-def move_horizontal(key):
-    m = len(key)
-    new_key = [[0] * m for _ in range(m)]
-    for i in range(m):
-        for j in range(1, m):
-            new_key[i][j] = key[i][j-1]
-
-    return new_key
-
-def move_vertical(key):
-    m = len(key)
-    new_key = [[0] * m for _ in range(m)]
-    for i in range(1, m):
         for j in range(m):
-            new_key[i][j] = key[i-1][j]
+            result[j][n - i - 1] = a[i][j]
 
-    return new_key
+    return result
 
-def check(key, lock):
-    flag = True
-    for i in range(len(lock)):
-        for j in range(len(lock)):
-            if key[i][j] == lock[i][j]:
-                flag = False
-                break
-        if flag == False:
-            break
+def check(new_lock):
+    lock_length = len(new_lock) // 3
+    for i in range(lock_length, lock_length * 2):
+        for j in range(lock_length, lock_length * 2):
+            if new_lock[i][j] != 1:
+                return False
 
-    return flag
+    return True
 
 def solution(key, lock):
-    answer = False
+    n = len(lock)
+    m = len(key)
 
-    for i in range(4):
-        turn_key = turn(key)
-        if check(turn_key, lock):
-            answer = True
-            break
-        else:
-            for j in range(len(key)):
-                horizontal_key = move_horizontal(turn_key)
-                if check(horizontal_key, lock):
-                    answer = True
-                    break
-                for k in range(len(key)):
-                    vertical_key = move_vertical(horizontal_key)
-                    if check(vertical_key, lock):
-                        answer = True
-                        break
-            if answer == True:
-                break
+    new_lock = [[0] * (n * 3) for _ in range(n * 3)]
 
-    return answer
+    for i in range(n):
+        for j in range(n):
+            new_lock[i + n][j + n] = lock[i][j]
+
+    for rotate in range(4):
+        key = rotate_a_matrix_by_90_degree(key)
+        for x in range(n * 2):
+            for y in range(n * 2):
+                for i in range(m):
+                    for j in range(m):
+                        new_lock[x][y] += key[i][j]
+
+                if check(new_lock) == True:
+                    return True
+                for i in range(m):
+                    for j in range(m):
+                        new_lock[x][y] -= key[i][j]
+
+    return False
 
 print(solution(key, lock))
