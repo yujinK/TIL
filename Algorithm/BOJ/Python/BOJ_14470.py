@@ -1,13 +1,11 @@
-a, b, c, d, e = [int(input()) for _ in range(5)]
+data = []
+for _ in range(5):
+    data.append(int(input()))
 
 time = 0
-while a < b:
-    if a < 0:
-        time += (0 - a) * c
-        a = 0
-        time += d
-    else:
-        time += (b - a) * e
-        a = b
+if data[0] < 0:
+    time = abs(data[0]) * data[2] + data[3]
+    data[0] = 0
 
+time += (data[1] - data[0]) * data[4]
 print(time)
