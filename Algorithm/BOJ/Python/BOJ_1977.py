@@ -1,18 +1,6 @@
-import math
-
 m = int(input())
 n = int(input())
-min = n
-sum = 0
+arr = [i * i for i in range(1, 101) if m <= i * i <= n]
 
-for i in range(m, n + 1):
-    sqrt = int(math.sqrt(i))
-    if sqrt * sqrt == i:
-        sum += i
-        if i < min:
-            min = i
-            
-if min == n:
-    print(-1)
-else:
-    print(sum, min, sep='\n')
+
+print("%d\n%d"%(sum(arr), arr[0])) if arr else print(-1)
