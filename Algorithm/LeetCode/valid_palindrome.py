@@ -1,6 +1,9 @@
+import re
+
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        data = [sub.lower() for sub in s if sub.isalnum()]
-        reversed_data = [sub for sub in reversed(data)]
+        s = s.lower()
+        s = re.sub('[^a-z0-9]', '', s)
 
-        return data == reversed_data
+        return s == s[::-1]
+        
