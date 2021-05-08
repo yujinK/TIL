@@ -2,18 +2,8 @@ import collections, re
 from typing import Collection
 
 paragraph = "Bob. hIt, baLl"
-banned = ["bob", "hit"]
+banned = ["bob", "hit", "ball"]
 
-counter = collections.Counter()
-words = paragraph.lower()
-
-input = ""
-for word in words:
-    if re.match('[^a-z]', word):
-        if input.isalpha() and input not in banned:
-            counter[input] += 1
-        input = ""
-    else:
-        input += word
-
-print(input) if len(counter) == 0 else print(counter.most_common(1)[0][0])
+words = [word for word in re.sub(r'[^\w]', ' ', paragraph).lower().split() if word not in banned]
+counts = collections.Counter(words)
+print(counts.most_common(1)[0][0])
