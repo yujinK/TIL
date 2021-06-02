@@ -65,6 +65,4 @@ head.next = node2
 node2.next = node3
 node3.next = node4
 
-# print(solution.isPalindrome(head))
-aa = None
-print(not aa)
+print(solution.isPalindrome(head))
