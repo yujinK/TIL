@@ -7,37 +7,59 @@ class ListNode:
         self.next = next
 
 class Solution:
+    # 전가산기
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        factor = 1
-        n1 = 0
-        n2 = 0
+        root = head = ListNode(0)
 
-        while True:
-            if l1 != None:
-                n1 += factor * l1.val
+        carry = 0
+        while l1 or l2 or carry:
+            sum = 0
+
+            if l1:
+                sum += l1.val
                 l1 = l1.next
 
-            if l2 != None:
-                n2 += factor * l2.val
+            if l2:
+                sum += l2.val
                 l2 = l2.next
 
-            if l1 == None and l2 == None:
-                break
+            carry, val = divmod(sum + carry, 10)
+            head.next = ListNode(val)
+            head = head.next
+        
+        return root.next
 
-            factor *= 10
 
-        sum = n1 + n2
-        head = cur = ListNode()
+    ## 내가 푼 방법 (10진수 계산)
+    # def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+    #     factor = 1
+    #     sum = 0
 
-        while True:
-            cur.next = ListNode(sum % 10)
-            sum //= 10
-            cur = cur.next
+    #     while True:
+    #         if l1:
+    #             sum += factor * l1.val
+    #             l1 = l1.next
 
-            if sum == 0:
-                break
+    #         if l2:
+    #             sum += factor * l2.val
+    #             l2 = l2.next
 
-        return head.next
+    #         if l1 == None and l2 == None:
+    #             break
+
+    #         factor *= 10
+
+    #     head = cur = ListNode()
+
+    #     while True:
+    #         cur.next = ListNode(sum % 10)
+    #         sum //= 10
+    #         cur = cur.next
+
+    #         if sum == 0:
+    #             break
+
+    #     return head.next
 
 
 solution = Solution()
