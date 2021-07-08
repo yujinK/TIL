@@ -4,25 +4,40 @@ class ListNode:
         self.next = next
 
 class Solution:
+    # def oddEvenList(self, head: ListNode) -> ListNode:
+    #     root = cur = ListNode(0)
+    #     evenRoot = even = ListNode(0)
+
+    #     oddFlag = True
+    #     while head:
+    #         if oddFlag:
+    #             cur.next = ListNode(head.val)
+    #             cur = cur.next
+    #             oddFlag = False
+    #         else:
+    #             even.next = ListNode(head.val)
+    #             even = even.next
+    #             oddFlag = True
+
+    #         head = head.next
+
+    #     cur.next = evenRoot.next
+    #     return root.next
+
     def oddEvenList(self, head: ListNode) -> ListNode:
-        root = cur = ListNode(0)
-        evenRoot = even = ListNode(0)
+        if head is None:
+            return None
 
-        oddFlag = True
-        while head:
-            if oddFlag:
-                cur.next = ListNode(head.val)
-                cur = cur.next
-                oddFlag = False
-            else:
-                even.next = ListNode(head.val)
-                even = even.next
-                oddFlag = True
+        odd = head
+        even = head.next
+        even_head = head.next
 
-            head = head.next
+        while even and even.next:
+            odd.next, even.next = odd.next.next, even.next.next
+            odd, even = odd.next, even.next
 
-        cur.next = evenRoot.next
-        return root.next
+        odd.next = even_head
+        return head
 
 solution = Solution()
 head = ListNode(1)
